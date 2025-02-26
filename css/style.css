@@ -1,22 +1,158 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
 
 /* Layout */
+.line {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.group {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.block {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.x {
+  flex-direction: row;
+  align-items: center;
+}
+
+.y {
+  flex-direction: column;
+  align-items: start;
+}
+
+.about, .history {
+  flex: 1;
+}
+
+.calculator {
+  flex: 2;
+}
+
+.wrapper {
+  flex-wrap: wrap;
+}
+
+.main {
+  padding: 0 0.75rem 0.75rem 0.75rem;
+  flex-grow: 1;
+}
+
+.loose {
+  gap: 2.25rem;
+}
 
 /* Aesthetics */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #F4F4F4;
+  color: #636363;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
 .dm-sans {
   font-family: "DM Sans", serif;
   font-optical-sizing: auto;
   font-style: normal;
+  letter-spacing: -0.05em;
 }
 
 .dm-mono-regular {
   font-family: "DM Mono", serif;
   font-weight: 400;
   font-style: normal;
+  letter-spacing: -0.02em;
 }
 
 .dm-mono-medium {
   font-family: "DM Mono", serif;
   font-weight: 500;
   font-style: normal;
+  letter-spacing: -0.02em;
 }
+
+.small-text {
+  font-size: 0.875rem;
+}
+
+.nav {
+  padding: 0.5rem 0.75rem;
+}
+
+h1 {
+  font-size: 3rem;
+  line-height: 3.25rem;
+}
+
+h2 {
+  font-size: 1.50rem;
+  line-height: 2rem;
+}
+
+section {
+  background-color: #FCFBFB;
+  padding: 1rem 0.75rem;
+  border: 1px solid #F0F0F0;
+  border-radius: 0.5rem;
+}
+
+ul {
+  list-style-type: none;
+}
+
+li {
+  margin-bottom: 0.5rem;
+}
+
+p {
+  color: #4D4D4D;
+  letter-spacing: -0.02em;
+}
+
+
+.limit-group {
+  max-width: 16ch;
+}
+
+.about {
+  min-width: 15.625rem;
+}
+
+.history, .calculator {
+  min-width: 18.5rem;
+}
+
+.lighter {
+  color: #E8E8E8;
+}
+
+.darker {
+  color: #090707;
+}
+
+.calculator {
+  background-color: #090707;
+}
+
+.calculator_frame {
+  background-color: #FFFFFF;
+  border-radius: 1.5rem 1.5rem 0rem 0rem;
+}
+
+/* .hat-off {
+  margin-top: 2rem;
+} */
