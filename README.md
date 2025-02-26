@@ -4,6 +4,6 @@ A simple calculator for the simple human. Should do addition, subtraction, divis
 ## Build Process
 - Project structure [✔️]
 - Build the UI [✔️]
-- Write the calculator bare logic [❌]
+- Write the calculator bare logic [✔️]
 - Fine-tune the calculator logic [❌]
 - Remove Issues [❌]
