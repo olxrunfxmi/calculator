@@ -147,6 +147,10 @@ button {
   letter-spacing: -0.05em;
 }
 
+button:disabled {
+  background: #4D4D4D;
+}
+
 .limit-group {
   max-width: 16ch;
 }
@@ -190,6 +194,7 @@ button {
   box-shadow: inset 0px 7px 4.8px rgba(195, 192, 192, 0.25), inset 0px -7px 10px rgba(195, 192, 192, 0.25);
   border-radius: 9px;
   align-items: end;
+  overflow: auto;
 }
 
 .bar {
@@ -218,6 +223,8 @@ button {
 .history {
   gap: 1rem;
   justify-content: flex-start;
+  overflow: auto;
+  max-height: calc(100vh - 48px);
 }
 
 .history_frame > li  {
@@ -228,4 +235,8 @@ button {
 
 .history_frame > li:last-child {
   border-bottom: none;
+}
+
+p.operation {
+  height: 1.5rem;
 }
