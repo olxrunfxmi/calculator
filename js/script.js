@@ -53,7 +53,6 @@ buttons.forEach((button) => {
 // Keyboard Event
 document.addEventListener("keydown", (e) => {
 	let pressedKey = e.key;
-	console.log(pressedKey);
 
 	if (pressedKey === "/") {
 		pressedKey = "÷";
