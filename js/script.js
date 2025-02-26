@@ -51,9 +51,46 @@ buttons.forEach((button) => {
 });
 
 // Keyboard Event
-// document.addEventListener("keydown", (e) => {
+document.addEventListener("keydown", (e) => {
+	let pressedKey = e.key;
+	console.log(pressedKey);
 
-// });
+	if (pressedKey === "/") {
+		pressedKey = "÷";
+	}
+
+	const converted = convertKeyPressToKey(pressedKey);
+
+	if (isNumber(pressedKey)) {
+		updateVisualTracker(pressedKey);
+		executeNumberPress(pressedKey);
+		updateOutputScreen();
+	} else if (isOperationKey(converted)) {
+		updateVisualTracker(converted);
+		executeOperationKeys(pressedKey);
+		updateOutputScreen();
+	} else if (pressedKey === "Escape") {
+		updateVisualTracker(pressedKey);
+		executeAC();
+		updateOutputScreen();
+	} else if (pressedKey === "`") {
+		updateVisualTracker(pressedKey);
+		executePlusMinus();
+		updateOutputScreen();
+	} else if (pressedKey === "Backspace") {
+		updateVisualTracker(pressedKey);
+		executeClear();
+		updateOutputScreen();
+	} else if (pressedKey === ".") {
+		updateVisualTracker(pressedKey);
+		addDecimal();
+		updateOutputScreen();
+	} else if (pressedKey === "Enter") {
+		updateVisualTracker(pressedKey);
+		executeCalculation();
+		updateOutputScreen();
+	}
+});
 
 // FUNCTIONS
 function isNumber(value) {
@@ -166,6 +203,7 @@ function updateOutputScreen() {
 function updateVisualTracker(operation) {
 	switch (operation) {
 		case "clear":
+		case "Backspace":
 			visualTracker.textContent = "Backspace ←";
 			visualTracker.style.color = "#A9FF29";
 			break;
@@ -190,6 +228,7 @@ function updateVisualTracker(operation) {
 			visualTracker.style.color = "#29A6FF";
 			break;
 		case "equals":
+		case "Enter":
 			visualTracker.textContent = "Solve [~/]";
 			visualTracker.style.color = "#FF29AD";
 			break;
@@ -265,4 +304,12 @@ function ableCalc() {
 			button.disabled = false;
 		}
 	});
+}
+
+function convertKeyPressToKey(keyPress) {
+	if (keyPress === "+") return "add";
+	if (keyPress === "-") return "subtract";
+	if (keyPress === "*") return "multiply";
+	if (keyPress === "÷") return "divide";
+	if (keyPress === "%") return "percent";
 }
