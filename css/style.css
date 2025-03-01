@@ -237,6 +237,6 @@ button:disabled {
   border-bottom: none;
 }
 
-p.operation {
+.operation:empty {
   height: 1.5rem;
 }
